@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Xavino - Carne Seca Artesanal</title>
+    <style>
+        :root {
+            --primary: #3c1c0d;
+            --secondary: #f39c12;
+            --accent: #c12020;
+            --light: #faf8f5;
+            --dark: #1a1a1a;
+            --success: #25D366;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--secondary); }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 140px 20px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { transform: scale(1.05); background: #a01a1a; }
+
+        .btn-whatsapp { background: var(--success); color: white; border-radius: 50px; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 60px 0 40px;
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card h3 { margin: 20px 0 10px; color: var(--primary); }
+        .card p { padding: 0 20px; color: #666; }
+
+        .precio-box {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 15px;
+            margin: 15px 20px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .precio-item {
+            margin: 8px 0;
+        }
+
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--success);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-circle">X</div>
+            <div class="logo-text">EL XAVINO</div>
+        </div>
+        <nav>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Carne Seca Artesanal</h1>
+        <p>De Monterrey para el mundo. Sabor 100% auténtico.</p>
+        <a href="#productos" class="btn btn-primary">Ver Productos</a>
+    </section>
+
+    <h2 id="productos" class="section-title">Nuestros Productos</h2>
+    <div class="grid-productos">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1599599810694-b5b37304c041?auto=format&fit=crop&q=80" alt="Laminada">
+            <h3>Laminada Natural</h3>
+            <p>Carne seleccionada con el grosor perfecto para botanear.</p>
+            <div class="precio-box">
+                <div class="precio-item">50g - $90</div>
+                <div class="precio-item">100g - $170</div>
+            </div>
+            <a href="https://wa.me/528116846152?text=Me%20interesa%20la%20Laminada%20Natural" class="btn btn-whatsapp" style="margin-top:15px">Pedir</a>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1626073713042-32607e157209?auto=format&fit=crop&q=80" alt="Chile">
+            <h3>Con Chile Especial</h3>
+            <p>El toque picosito que no puede faltar en tu mesa.</p>
+            <div class="precio-box">
+                <div class="precio-item">Consulta disponibilidad</div>
+            </div>
+            <a href="https://wa.me/528116846152?text=Me%20interesa%20Con%20Chile%20Especial" class="btn btn-whatsapp" style="margin-top:15px">Pedir</a>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80" alt="Deshebrada">
+            <h3>Deshebrada Fina</h3>
+            <p>Ideal para el machacado o tacos de desayuno.</p>
+            <div class="precio-box">
+                <div class="precio-item">100g - $140</div>
+            </div>
+            <a href="https://wa.me/528116846152?text=Me%20interesa%20la%20Deshebrada%20Fina" class="btn btn-whatsapp" style="margin-top:15px">Pedir</a>
+        </div>
+    </div>
+
+    <section id="nosotros" style="padding: 80px 5%; text-align: center; background: white;">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">
+            En <strong>El Xavino</strong> honramos la tradición del norte. Nuestra carne seca es elaborada con procesos artesanales, seleccionando los mejores cortes y asegurando un sabor que te recordar�� a casa.
+        </p>
+    </section>
+
+    <footer id="contacto">
+        <p>¿Pedidos especiales o mayoreo?</p>
+        <a href="https://wa.me/528116846152" class="btn btn-whatsapp">Escríbenos por WhatsApp</a>
+        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">© 2026 El Xavino Carne Seca Artesanal | Monterrey, N.L. 🇲🇽</p>
+    </footer>
+
+    <a href="https://wa.me/528116846152" class="wa-float">
+        <span>💬</span>
+    </a>
+
+</body>
+</html>
